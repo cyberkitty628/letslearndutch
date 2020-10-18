@@ -3,25 +3,31 @@
     <head>
         <title>Let's Learn Dutch!</title>
         <link href="styles.css" rel="stylesheet">
+        <script src="script.js"></script>
     </head>
 
-    <body>
-        <div class="header">
+<body>
+        <div id="header" class="header">
             <h1>Let's Learn Dutch! &#127475;&#127473;</h1>
         </div>
-        <div class="main">
+        
+        <div id="main" class="main">
             <div class="translator">
                 <h3>Quick Translate</h3>
                 <p><i>Hint:</i> Type a sentence like "How are you?" or a greeting like "Hello, my name is ___!</p>
             </div>
-             <div class="dutchbot">
+             <div id="dutchbot" class="dutchbot">
                 <h3>DutchBot</h3>
                 <p>Insert bot here</p>
             </div>
         </div>
-        <div class="quiz">
+
+        <div id="quizholder" class="quizholder">
             <h3>Quiz</h3>
-            <p>Insert quiz here</p>
+            <div id="quiz"></div>
+            <button id="submit">Submit</button>
+            <div id="results"></div>
         </div>
+
     </body>
 </html>

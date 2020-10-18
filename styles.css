@@ -42,6 +42,33 @@ h3 {
     margin: 10px;
 }
 
-.quiz {
+.quizholder {
     margin: 20px;
+}
+
+.question{
+	font-weight: bold;
+}
+
+.answers {
+  margin: 20px;
+  margin-bottom: 25px;
+}
+
+.answers label{
+  display: block;
+}
+
+#submit{
+	background-color: orange;
+	color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+	border: 0px;
+	border-radius: 15px;
+	padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+	margin-bottom: 10px;
 }
