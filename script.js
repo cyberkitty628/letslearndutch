@@ -92,7 +92,8 @@ const quizQuestions = [
             a: "Mijn naam is (your name).",
             b: "Haar naam is (your name).",
             c: "Mij naam is (your name)."
-        }
+        },
+        correctAnswer: "a"
     }
 ]
 
