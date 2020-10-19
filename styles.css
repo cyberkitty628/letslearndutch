@@ -59,7 +59,7 @@ h3 {
   display: block;
 }
 
-#submit{
+#submit, #next, #previous {
 	background-color: orange;
 	color: #fff;
   text-transform: uppercase;
