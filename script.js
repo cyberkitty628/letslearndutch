@@ -16,9 +16,10 @@ function displayQuiz(){
                     </label>`
                 );
             }
-            // Adds question and answer to output
+            // Adds question & answer to output and creates div element to hold them
             output.push(
-                `<div class="question"> ${currentQuestion.question} </div>
+                `<div class="slide">
+                <div class="question"> ${currentQuestion.question} </div>
                 <div class="answers"> ${answers.join('')} </div>`
             );
         }
@@ -28,9 +29,11 @@ function displayQuiz(){
 
 function showResults(){}
 
+// Variables to store existing HTML div containers
 const quizContainer = document.getElementById('quiz');
 const resultsContainer = document.getElementById('results');
 const submitButton = document.getElementById('submit');
+// Variable to store questions & answers
 const myQuestions = [
     {
         question: "In Dutch, what is the correct way to refer to someone who uses she/her pronouns?",
