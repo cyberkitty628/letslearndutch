@@ -1,8 +1,8 @@
+// Created function to display the quiz
 function displayQuiz(){
 // Variable to store HTML quiz output
     const output= [];
-
-    myQuestions.forEach(
+    quizQuestions.forEach(
         (currentQuestion, questionNumber) => {
             // Variable stores list of answers
             const answers = [];
@@ -11,30 +11,44 @@ function displayQuiz(){
                 answers.push(
                     `<label>
                         <input type="radio" name="question${questionNumber}" value="${letter}">
-                        ${letter} :
                         ${currentQuestion.answers[letter]}
                     </label>`
                 );
             }
-            // Adds question & answer to output and creates div element to hold them
+            // Adds question & answer to output
             output.push(
-                `<div class="slide">
-                <div class="question"> ${currentQuestion.question} </div>
+                `<div class="question"> ${currentQuestion.question} </div>
                 <div class="answers"> ${answers.join('')} </div>`
             );
         }
     );
+    // Puts all questions in HTML
     quizContainer.innerHTML = output.join('');
 }
 
-function showResults(){}
+function showResults(){
+    // Variable to retrieve user answers
+    const answerContainers = quizContainer.querySelectorAll('.answers');
+
+    quizQuestions.forEach((currentQuestion, questionNumber) => {
+        const answerContainer = answerContainers[questionNumber];
+        const selector = `input[name=question${questionNumber}]:checked`;
+        const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+    if (userAnswer === currentQuestion.correctAnswer) {
+        answerContainers[questionNumber].style.color = 'green';
+    }
+        else {answerContainers[questionNumber].style.color = 'red';
+    }
+});
+}
 
 // Variables to store existing HTML div containers
 const quizContainer = document.getElementById('quiz');
 const resultsContainer = document.getElementById('results');
 const submitButton = document.getElementById('submit');
 // Variable to store questions & answers
-const myQuestions = [
+const quizQuestions = [
     {
         question: "In Dutch, what is the correct way to refer to someone who uses she/her pronouns?",
         answers: {
