@@ -26,15 +26,16 @@ function displayQuiz(){
     quizContainer.innerHTML = output.join('');
 }
 
+// This function will indicate whether the user got the question right or wrong by changing colors
 function showResults(){
-    // Variable to retrieve user answers
+    // Variable to retrieve user answers and select questions & answers
     const answerContainers = quizContainer.querySelectorAll('.answers');
 
     quizQuestions.forEach((currentQuestion, questionNumber) => {
         const answerContainer = answerContainers[questionNumber];
         const selector = `input[name=question${questionNumber}]:checked`;
         const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-
+        // 'If' statement will turn question + answer green or red depending on correctness
     if (userAnswer === currentQuestion.correctAnswer) {
         answerContainers[questionNumber].style.color = 'green';
     }
@@ -68,11 +69,11 @@ const quizQuestions = [
         correctAnswer: "c"
     },
     {
-        question: "What is the Dutch word for 'dog'?",
+        question: "What is the Dutch phrase for 'see you later'?",
         answers: {
-            a: "Paard",
-            b: "Haan",
-            c: "Hond"
+            a: "Zie jou tot!",
+            b: "Ziens tot!",
+            c: "Tot ziens!"
         },
         correctAnswer: "c"
     },
@@ -84,6 +85,14 @@ const quizQuestions = [
             c: "Winter, Lente, Zomer, Herbst"
         },
         correctAnswer: "b"
+    },
+    {
+        question: "How would you word the phrase 'my name is (your name)' in Dutch?",
+        answers: {
+            a: "Mijn naam is (your name).",
+            b: "Haar naam is (your name).",
+            c: "Mij naam is (your name)."
+        }
     }
 ]
 
